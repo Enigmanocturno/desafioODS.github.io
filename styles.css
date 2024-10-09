@@ -1,0 +1,379 @@
+/* Variables CSS para colores y fuentes */
+:root {
+    --primary-color: #2E8B57;
+    --secondary-color: #f0f0f0;
+    --text-color: #333;
+    --background-color: #fff;
+    --accent-color: #ff6f61;
+    --font-family: 'Roboto', sans-serif;
+}
+
+/* Reseteo de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Sección del video de fondo */
+.video-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video-section .video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* El video se queda detrás del contenido */
+}
+
+/* Recuadro inspirador */
+.inspirational-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 600px;
+    z-index: 1; /* Asegura que el recuadro está frente al video */
+}
+
+.inspirational-box h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.inspirational-box p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #e64a19;
+}
+
+/* Espacio para imágenes con enlaces a redes sociales */
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Espacio entre las imágenes */
+    margin-top: 2rem;
+    z-index: 1; /* Coloca las imágenes frente al video */
+}
+
+.image-container img {
+    width: 50px; /* Ajusta el tamaño de las imágenes */
+    height: auto;
+    cursor: pointer;
+}
+
+/* Estilos del header y navegación */
+header {
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+    color: var(--secondary-color);
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Asegura que el header esté sobre el video */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav ul li {
+    font-size: 1.1rem;
+}
+
+nav ul li a {
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Estilos generales para el contenido principal */
+main {
+    padding: 2rem;
+    position: relative;
+    z-index: 1; /* Coloca el contenido principal sobre el video */
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+p, li {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+ul.ods-list {
+    padding-left: 1rem;
+}
+
+ul.ods-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* Formularios */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, button {
+    padding: 0.8rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--accent-color);
+}
+
+/* Pie de página */
+footer {
+    background-color: var(--primary-color); /* Color de fondo del footer */
+    color: var(--secondary-color); /* Color del texto del footer */
+    padding: 1rem; /* Espaciado interno del footer */
+    text-align: center; /* Centra el texto */
+    margin-top: 2rem; /* Margen superior para separarlo del contenido */
+    position: relative; /* Se coloca en relación al flujo normal del documento */
+    width: 100%; /* Ocupa todo el ancho de la página */
+    z-index: 1; /* Asegura que el footer esté sobre otros elementos */
+}
+
+/* Asegura que el footer se mantenga al final del contenido */
+body {
+    display: flex;
+    flex-direction: column; /* Organiza el contenido en columnas */
+    min-height: 100vh; /* Asegura que el cuerpo ocupa al menos la altura de la ventana */
+}
+
+main {
+    flex: 1; /* Permite que el contenido principal expanda el espacio disponible */
+}
+
+/* Estilos para los párrafos y enlaces dentro del footer */
+/* Estilo para el pie de página */
+/* Estilos del footer centrado y en la parte inferior */
+.footer {
+    position: absolute;
+    bottom: 20px; /* Ajusta la distancia desde el fondo */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Compensa el centrado */
+    color: rgb(255, 255, 255); /* Texto blanco para mayor contraste */
+    z-index: 2; /* Asegura que el pie de página esté sobre el video */
+    text-align: center; /* Centra el contenido del pie de página */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo negro semitransparente */
+    padding: 15px; /* Espaciado interno para mayor comodidad */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para el contenedor */
+}
+
+footer p {
+    margin: 0.5rem 0; /* Espaciado entre párrafos */
+}
+
+footer a {
+    color: var(--secondary-color); /* Color de los enlaces */
+}
+
+footer a:hover {
+    color: var(--accent-color); /* Color de los enlaces al pasar el mouse */
+}
+
+
+
+/* Estilos para los iconos de redes sociales */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* Espacio entre los iconos */
+    margin: 1rem 0;
+}
+
+.social-icons img {
+    width: 40px; /* Ajusta el tamaño de los iconos */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Efecto hover para agrandar los iconos ligeramente */
+}
+
+/* Para asegurar que el footer está sobre el video */
+.video-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video-section .video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Estilos para los iconos de redes sociales */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* Espacio entre los iconos */
+    margin: 1rem 0;
+}
+
+.social-icons img {
+    width: 40px; /* Ajusta el tamaño de los iconos */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Efecto hover para agrandar los iconos ligeramente */
+}
+
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+}
+/* Estilos para el recuadro de bienvenida */
+.welcome-box {
+    position: absolute; /* Para posicionarlo dentro de la sección de video */
+    top: 20%; /* Ajusta la posición vertical como desees */
+    left: 50%; /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Ajuste para centrarlo */
+    background-color: rgba(14, 1, 1, 0.872); /* Fondo blanco semi-transparente */
+    color: var(--primary-color); /* Color del texto */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.863); /* Sombra para darle un efecto de elevación */
+    text-align: center; /* Centrar texto */
+    z-index: 1; /* Asegura que esté sobre el video */
+}
+
+.welcome-box h2 {
+    font-size: 2em; /* Tamaño de fuente */
+    margin: 0; /* Sin margen */
+}
+/* Estilos para el logo */
+.logo {
+    position: absolute; /* Para posicionar el logo en la parte superior izquierda */
+    top: 20px; /* Distancia desde la parte superior de la página */
+    left: 20px; /* Distancia desde el borde izquierdo */
+    width: 100px; /* Ajusta el tamaño como desees */
+    height: 100px; /* Asegúrate que sea cuadrado para que se vea circular */
+    border-radius: 50%; /* Hace que el logo sea circular */
+    object-fit: cover; /* Mantiene la relación de aspecto y cubre el área */
+    z-index: 1; /* Asegura que el logo esté sobre el video */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra para darle un efecto de elevación */
+}
+
+
+
+
